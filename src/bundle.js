@@ -60,12 +60,14 @@
 	
 	var _app2 = _interopRequireDefault(_app);
 	
-	__webpack_require__(12);
+	var _staticElements = __webpack_require__(12);
+	
+	var _staticElements2 = _interopRequireDefault(_staticElements);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	(function () {
-	    _angular2.default.module('app', [_angularUiRouter2.default]).component('app', _app2.default);
+	    _angular2.default.module('app', [_angularUiRouter2.default, _staticElements2.default.name]).component('app', _app2.default);
 	})();
 
 /***/ },
@@ -37455,7 +37457,7 @@
 /* 9 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"app\">\n    <!--<headernav>-->\n       <div>\n           Header\n       </div>\n    <!--</headernav>-->\n    <!--<git>-->\n        <div>\n            Content\n        </div>\n    <!--</git>-->\n    <!--<appfooter>-->\n        <div>\n            footer\n        </div>\n    <!--</appfooter>-->\n</div>"
+	module.exports = "<div class=\"app\">\n    <!--<headernav>-->\n       <headernav>\n           Header\n       </headernav>\n    <!--</headernav>-->\n    <!--<git>-->\n        <div>\n            Content\n        </div>\n    <!--</git>-->\n    <!--<appfooter>-->\n        <div>\n            footer\n        </div>\n    <!--</appfooter>-->\n</div>"
 
 /***/ },
 /* 10 */
@@ -37473,8 +37475,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/sass-loader/index.js!./app.scss", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/sass-loader/index.js!./app.scss");
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/sass-loader/index.js!./../../node_modules/autoprefixer-loader/index.js?{browsers: \">5%\"}!./app.scss", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/sass-loader/index.js!./../../node_modules/autoprefixer-loader/index.js?{browsers: \">5%\"}!./app.scss");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -37492,7 +37494,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".app {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  min-height: 100%; }\n  .app > * {\n    flex: 1 33%; }\n", ""]);
+	exports.push([module.id, "html {\n  height: 100%;\n  position: relative; }\n  html body {\n    font-family: 'Helvetica', 'Arial', sans-serif;\n    height: 100%; }\n    html body .app {\n      display: -webkit-box;\n      display: flex;\n      -webkit-box-orient: vertical;\n      -webkit-box-direction: normal;\n      flex-direction: column;\n      margin: 0;\n      padding: 0;\n      box-sizing: border-box;\n      height: 100%; }\n      html body .app div:nth-of-type(1) {\n        -webkit-box-flex: 1;\n        flex: 1 80%; }\n      html body .app div:nth-of-type(2) {\n        -webkit-box-flex: 1;\n        flex: 1 10%; }\n", ""]);
 	
 	// exports
 
@@ -37501,10 +37503,88 @@
 /* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _angular = __webpack_require__(5);
+	
+	var _angular2 = _interopRequireDefault(_angular);
+	
+	var _header = __webpack_require__(13);
+	
+	var _header2 = _interopRequireDefault(_header);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var StaticElementsModule = _angular2.default.module('static', [_header2.default.name]);
+	
+	exports.default = StaticElementsModule;
+
+/***/ },
+/* 13 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _angular = __webpack_require__(5);
+	
+	var _angular2 = _interopRequireDefault(_angular);
+	
+	var _header = __webpack_require__(14);
+	
+	var _header2 = _interopRequireDefault(_header);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var HeaderModule = _angular2.default.module('headernav', []).component('headernav', _header2.default);
+	
+	exports.default = HeaderModule;
+
+/***/ },
+/* 14 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _header = __webpack_require__(15);
+	
+	var _header2 = _interopRequireDefault(_header);
+	
+	__webpack_require__(16);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var HeaderComponent = {
+	    template: _header2.default
+	};
+	
+	exports.default = HeaderComponent;
+
+/***/ },
+/* 15 */
+/***/ function(module, exports) {
+
+	module.exports = "<span>Git</span>\n<ul>\n    <li><a ui-sref=\"stage\">Stage</a></li>\n    <li><a ui-sref=\"commit\">Commit</a></li>\n    <li><a ui-sref=\"push\">Push</a></li>\n</ul>"
+
+/***/ },
+/* 16 */
+/***/ function(module, exports, __webpack_require__) {
+
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(13);
+	var content = __webpack_require__(17);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(4)(content, {});
@@ -37513,8 +37593,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!./styles.scss", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!./styles.scss");
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./../../../../node_modules/autoprefixer-loader/index.js?{browsers: \">5%\"}!./header.scss", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./../../../../node_modules/autoprefixer-loader/index.js?{browsers: \">5%\"}!./header.scss");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -37524,7 +37604,7 @@
 	}
 
 /***/ },
-/* 13 */
+/* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(3)();
@@ -37532,7 +37612,7 @@
 	
 	
 	// module
-	exports.push([module.id, "html {\n  height: 100%;\n  position: relative; }\n  html body {\n    font-family: 'Helvetica', 'Arial', sans-serif;\n    height: 100%; }\n", ""]);
+	exports.push([module.id, "headernav {\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-pack: justify;\n  justify-content: space-between;\n  -webkit-box-align: center;\n  align-items: center;\n  -webkit-box-flex: 1;\n  flex: 1 10%;\n  min-width: 100%;\n  margin: 0; }\n  headernav > * {\n    padding: 0;\n    margin: 2vh 2vw; }\n  headernav ul {\n    list-style: none; }\n    headernav ul a {\n      text-decoration: none; }\n", ""]);
 	
 	// exports
 

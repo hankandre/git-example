@@ -18,7 +18,7 @@ let resolveToApp = (glob) => {
 // map of all paths
 let paths = {
   js: resolveToApp('**/*!(.spec.js).js'), // exclude spec files
-  scss: path.join(root, '/content/**/*.scss'), // stylesheets
+  scss: path.join(root, '**/*.scss'), // stylesheets
   html: [
     resolveToApp('**/*.html'),
     path.join(root, 'index.html')
