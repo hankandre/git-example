@@ -37575,7 +37575,7 @@
 /* 15 */
 /***/ function(module, exports) {
 
-	module.exports = "<span>Git</span>\n<ul>\n    <li><a ui-sref=\"stage\">Stage</a></li>\n    <li><a ui-sref=\"commit\">Commit</a></li>\n    <li><a ui-sref=\"push\">Push</a></li>\n</ul>"
+	module.exports = "<span>Git</span>\n\n<nav>\n    <a class=\"material-icons\">menu</a>\n    <ul>\n        <li><a ui-sref=\"stage\">Stage</a></li>\n        <li><a ui-sref=\"commit\">Commit</a></li>\n        <li><a ui-sref=\"push\">Push</a></li>\n    </ul>\n</nav>"
 
 /***/ },
 /* 16 */
@@ -37612,7 +37612,7 @@
 	
 	
 	// module
-	exports.push([module.id, "headernav {\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-pack: justify;\n  justify-content: space-between;\n  -webkit-box-align: center;\n  align-items: center;\n  -webkit-box-flex: 1;\n  flex: 1 10%;\n  min-width: 100%;\n  margin: 0; }\n  headernav > * {\n    padding: 0;\n    margin: 2vh 2vw; }\n  headernav ul {\n    list-style: none; }\n    headernav ul a {\n      text-decoration: none; }\n", ""]);
+	exports.push([module.id, "headernav {\n  position: fixed;\n  top: 0;\n  right: 0;\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-pack: justify;\n  justify-content: space-between;\n  min-width: 100%;\n  margin: 0;\n  height: 10vw;\n  padding: 2vh 2vw;\n  position: relative; }\n  headernav > * {\n    padding: 0;\n    margin: 0; }\n  headernav nav {\n    text-align: right;\n    -webkit-transform: translateX(-90%);\n    transform: translateX(-90%); }\n    headernav nav ul li {\n      overflow: hidden;\n      height: 0;\n      -webkit-transition: height 500ms ease-in;\n      transition: height 500ms ease-in; }\n  headernav nav:hover ul li {\n    height: 50px; }\n", ""]);
 	
 	// exports
 

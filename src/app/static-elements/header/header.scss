@@ -1,18 +1,33 @@
 headernav {
+    position: fixed;
+    top: 0;
+    right: 0;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    flex: 1 10%;
     min-width: 100%;
     margin: 0;
+    height: 10vw;
+    padding: 2vh 2vw;
+    position: relative;
     & > * {
         padding: 0;
-        margin: 2vh 2vw;
+        margin: 0;
     }
-    ul {
-        list-style: none;
-        a {
-            text-decoration: none;
+    nav {
+        text-align: right;
+        transform: translateX(-90%);
+        ul {
+            li {
+                overflow: hidden;
+                height:0;
+                -webkit-transition:height 500ms ease-in;
+                -moz-transition:height 500ms ease-in;
+                -o-transition:height 500ms ease-in;
+                transition: height 500ms ease-in;
+            }
         }
+    }
+    nav:hover ul li {
+        height: 50px;
     }
 }
