@@ -1,25 +1,39 @@
+$bannerText: #fff;
+$background: rgb(87,87,87);
+
 headernav {
     position: fixed;
     top: 0;
     right: 0;
     display: flex;
+    align-items: center;
     justify-content: space-between;
     min-width: 100%;
     margin: 0;
-    height: 10vw;
-    padding: 2vh 2vw;
-    position: relative;
+    padding: 0;
+    color: $bannerText;
+    background-color: $background;
     & > * {
         padding: 0;
-        margin: 0;
+        margin: 2vh 2vw;
     }
     nav {
-        text-align: right;
+        text-align: center;
         transform: translateX(-90%);
+        vertical-align: middle;
+        position: relative;
         ul {
+            position: absolute;
+            text-align: right;
+            left: 0;
+            transform: translateX(-50%);
+            margin: 0;
+            padding: 0;
+            background-color: rgba($background, .6);
             li {
-                overflow: hidden;
                 height:0;
+                overflow: hidden;
+                list-style: none;
                 -webkit-transition:height 500ms ease-in;
                 -moz-transition:height 500ms ease-in;
                 -o-transition:height 500ms ease-in;
