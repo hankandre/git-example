@@ -1,6 +1,11 @@
+var path = require('path');
+
 module.exports = {
     devtool: 'sourcemap',
+    context: __dirname + '/src',
+    entry: './app/app.js',
     output: {
+        path: path.resolve(__dirname, 'src/'),
         filename: 'bundle.js'
     },
     module: {
