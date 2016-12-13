@@ -1,8 +1,8 @@
 import angular from 'angular';
 import FooterComponent from './footer.component';
 
-const footer = angular.module('appfooter', [
+const FooterModule = angular.module('appfooter', [
 
 ]).component('appfooter', FooterComponent);
 
-export default footer;
+export default FooterModule;
